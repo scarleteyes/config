@@ -5,6 +5,12 @@ import datetime
 import pyauto
 from keyhac import *
 
+'''
+Remap Windows shortcuts like mac with Keyhac.
+
+Keyhac
+https://sites.google.com/site/craftware/keyhac-en
+'''
 
 def configure(keymap):
 
@@ -44,12 +50,11 @@ def configure(keymap):
     keymap_global[ "Shift-A-S" ] = "A-F","A-A"     # Save as
     keymap_global[ "A-W"] = "C-W"                  # Close current tab
     keymap_global[ "A-Q" ] = "A-F4"                # Quit
-    keymap_global[ "A-P" ] = "C-P"                 # Print
     # Edit
     keymap_global[ "LA-F" ] = "C-F"                # Search
     keymap_global[ "LA-RA-F" ] = "C-H"             # Replace
     keymap_global[ "A-Z" ] = "C-Z"                 # Undo
-    keymap_global[ "A-Shift-Z" ] = "C-Y"           # Redo
+    keymap_global[ "Shift-A-Z" ] = "C-Y"           # Redo
     keymap_global[ "A-A" ] = "C-A"                 # Select all
     keymap_global[ "A-X" ] = "C-X"                 # Cut
     keymap_global[ "A-C" ] = "C-C"                 # Copy
@@ -57,3 +62,6 @@ def configure(keymap):
     keymap_global[ "C-D" ] = "Delete"              # Delete
     keymap_global[ "C-H" ] = "Back"                # Backspace
     keymap_global[ "C-K" ] = "S-End","C-X"         # Removing following text
+    # Other
+    keymap_global[ "A-P" ] = "C-P"
+    keymap_global[ "Shift-A-P" ] = "Shift-C-P"
