@@ -65,3 +65,14 @@ def configure(keymap):
     # Other
     keymap_global[ "A-P" ] = "C-P"
     keymap_global[ "Shift-A-P" ] = "Shift-C-P"
+
+    def ime_on():
+        keymap.wnd.setImeStatus(True)
+    
+    def ime_off():
+        keymap.wnd.setImeStatus(False)
+    
+    keymap_global[ "28" ] = ime_on                  # Enable IME by "変換" key
+    keymap_global[ "29" ] = ime_off                 # Disable IME by "無変換" key
+
+    keymap.clipboard_history.enableHook(False)
