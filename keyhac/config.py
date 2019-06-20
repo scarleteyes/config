@@ -63,8 +63,12 @@ def configure(keymap):
     keymap_global[ "C-H" ] = "Back"                # Backspace
     keymap_global[ "C-K" ] = "S-End","C-X"         # Removing following text
     # Other
-    keymap_global[ "A-P" ] = "C-P"
-    keymap_global[ "Shift-A-P" ] = "Shift-C-P"
+    keymap_global[ "A-P" ] = "C-P"                 # Print
+    
+    # Visual Studio Code
+    keymap_code = keymap.defineWindowKeymap( exe_name="Code.exe" )
+    keymap_code[ "Shift-A-P" ] = "Shift-C-P"       # Command Palette
+
 
     def ime_on():
         keymap.wnd.setImeStatus(True)
