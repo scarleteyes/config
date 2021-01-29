@@ -29,9 +29,6 @@ def configure(keymap):
 
     # --------------------------------------------------------------------
 
-    # for Magic Keyboard
-    is_magic_keyboard = False
-
     # Global keymap which affects any windows
     keymap_global = keymap.defineWindowKeymap()
     # Move
@@ -86,7 +83,3 @@ def configure(keymap):
     keymap_global[ "29" ] = ime_off                 # Disable IME by "無変換" key
 
     keymap.clipboard_history.enableHook(False)
-
-    if is_magic_keyboard:
-        keymap.replaceKey( "LWin", "LAlt" )         # Swap command key for option key
-        keymap.replaceKey( "LAlt", "LWin" )
