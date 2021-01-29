@@ -29,6 +29,9 @@ def configure(keymap):
 
     # --------------------------------------------------------------------
 
+    # for Magic Keyboard
+    is_magic_keyboard = False
+
     # Global keymap which affects any windows
     keymap_global = keymap.defineWindowKeymap()
     # Move
@@ -46,6 +49,7 @@ def configure(keymap):
     keymap_global[ "Shift-C-E" ] = "Shift-End"     # Move to end of line and select
     # File
     keymap_global[ "A-N" ] = "C-N"                 # New File
+    keymap_global[ "A-R" ] = "F5"                  # Reload
     keymap_global[ "A-S" ] = "C-S"                 # Save
     keymap_global[ "Shift-A-S" ] = "A-F","A-A"     # Save as
     keymap_global[ "A-W"] = "C-W"                  # Close current tab
@@ -64,6 +68,8 @@ def configure(keymap):
     keymap_global[ "C-K" ] = "S-End","C-X"         # Removing following text
     # Other
     keymap_global[ "A-P" ] = "C-P"                 # Print
+    keymap_global[ "C-Plus" ] = "F10"              # Half-width alphanumeric
+    keymap_global[ "Shift-C-Plus" ] = "C-Plus"     # Zoom
     
     # Visual Studio Code
     keymap_code = keymap.defineWindowKeymap( exe_name="Code.exe" )
@@ -80,3 +86,7 @@ def configure(keymap):
     keymap_global[ "29" ] = ime_off                 # Disable IME by "無変換" key
 
     keymap.clipboard_history.enableHook(False)
+
+    if is_magic_keyboard:
+        keymap.replaceKey( "LWin", "LAlt" )         # Swap command key for option key
+        keymap.replaceKey( "LAlt", "LWin" )
